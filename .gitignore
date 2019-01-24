@@ -1,0 +1,10 @@
+# Python's bytecode compiled files
+__pycache__/
+
+# Sphinx build files in doc/build/ folder
+doc/build/**
+!doc/build/.gitkeep
+
+# temp/ folder
+temp/**
+!temp/.gitkeep

@@ -1,0 +1,3 @@
+# define conda environment requirements file
+conda:
+    file: environment.yml
