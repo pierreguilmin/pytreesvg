@@ -3,6 +3,7 @@ import sys, os
 sys.path.insert(0, os.path.abspath('pytreesvg'))
 
 from pytreesvg.node_svg import NodeStyle, NodeSVG
+import random
 
 class TestClassNodeStyle(unittest.TestCase):
     """Unit test for the ``NodeStyle`` class."""
@@ -103,6 +104,20 @@ class TestClassNodeSVG(unittest.TestCase):
     def test_get_depth(self):
         self.assertEqual(self.basic_tree.get_depth(), 1)
         self.assertEqual(self.complex_tree.get_depth(), 2)
+
+    def test_get_random_node(self):
+        random.seed(42)
+
+        self.assertEqual(repr(NodeSVG.get_random_node()), '3 (rgb(57,12,140)@12, x: 0.00, y: 0.00)')
+
+        random_node = NodeSVG.get_random_node(values=['Michel', 'Julia', 'Robert'],
+                                              sizes=[18, 1, 2],
+                                              colors=['aqua', 'salmon', '#ff8', 'rgb(10%, 22%, 13%)'])
+        self.assertEqual(repr(random_node), "'Robert' (salmon@18, x: 0.00, y: 0.00)")
+
+        with self.assertRaises(TypeError): NodeSVG.get_random_node(values=1)
+        with self.assertRaises(TypeError): NodeSVG.get_random_node(sizes=1)
+        with self.assertRaises(Exception): NodeSVG.get_random_node(colors='aqua')
 
 
 # shell command to run the tests:

@@ -6,6 +6,7 @@
 """
 
 import re
+import random
 from pytreesvg.tools import map
 
 class NodeStyle:
@@ -375,6 +376,60 @@ class NodeSVG:
             return current_node_depth
         else:
             return max([child.get_depth(current_node_depth + 1) for child in self.children])
+
+    @staticmethod
+    def get_random_node(values=range(0, 10), sizes=range(5, 21), colors=None):
+        """Return a random ``NodeSVG`` object.
+
+        Parameters
+        ----------
+        values: list, optional
+            List of possible values for the random node (`default=range(0, 10)`).
+        sizes: list, optional
+            List of possible sizes for the random node (`default=range(5, 21)`).
+        colors: list, optional
+            List of possible colors for the random node, if not specified the color will be selected randomly over the 
+            whole color spectrum (`default=None`).
+
+        Notes
+        -----
+        This functions uses the ``random`` module. If you need reproducible results please set the random number 
+        generator seed before calling this function::
+
+            import random
+
+            random.seed(42) # set random number generator seed to 42
+
+        Examples
+        --------
+        .. doctest::
+
+            >>> import random
+            >>> random.seed(42)
+            >>> NodeSVG.get_random_node()
+            3 (rgb(57,12,140)@12, x: 0.00, y: 0.00)
+            >>> NodeSVG.get_random_node(values=['Michel', 'Julia', 'Robert'],
+            ...                         sizes=[18, 1, 2],
+            ...                         colors=['aqua', 'salmon', '#ff8', 'rgb(10%, 22%, 13%)'])
+            'Robert' (salmon@18, x: 0.00, y: 0.00)
+
+        Warnings
+        --------
+        If you want to specify a unique value for one of the parameters, please still use a list format::
+
+            # bad syntax
+            NodeSVG.get_random_node(values=1)
+
+            # good syntax
+            NodeSVG.get_random_node(values=[1])
+        """
+        if colors:
+            color = random.choice(colors)
+        else:
+            # pick random color over the whole color spectrum
+            color = f'rgb({random.randint(0, 255)},{random.randint(0, 255)},{random.randint(0, 255)})'
+
+        return NodeSVG(value=random.choice(values), style=f'{color}@{random.choice(sizes)}')
 
     def to_svg(self, path='node.svg', width=400, height=400, gradient_color=True, image_border=True):
         """Create a SVG image and draw the tree.
