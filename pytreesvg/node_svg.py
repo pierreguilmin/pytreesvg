@@ -157,6 +157,46 @@ class NodeStyle:
         """Return a string representing the style."""
         return f'{self.color}@{self.size}'
 
+    def get_color_id(self):
+        """Return a string representing the color with a unique id that respects the SVG recommendation.
+
+        Returns
+        -------
+        string
+            Color id (unique and SVG-valid).
+
+        Notes
+        -----
+        The `W3C SVG 1.1 (Second Edition) Recommendation - Section 5.10.1 
+        <https://www.w3.org/TR/2011/REC-SVG11-20110816/struct.html#Core.attrib>`_ states that one should refer to the 
+        `W3C XML 1.0 (Fifth Edition) Recommendation - Section 3.3.1 
+        <https://www.w3.org/TR/2008/REC-xml-20081126/#sec-attribute-types>`_ when specifying the ``id`` attribute of an 
+        object. This last document specifies that the possible names are defined in the `W3C XML 1.0 (Fifth Edition) 
+        Recommendation - Section 2.3 <https://www.w3.org/TR/2008/REC-xml-20081126/#NT-Name>`_.
+
+        This function returns an arbitrarily modified color name specifically built to respect this convention.
+
+        Examples
+        --------
+        .. doctest::
+
+            >>> NodeStyle('green@12').get_color_id()
+            'green'
+            >>> NodeStyle('#aa8ef7@3').get_color_id()
+            'aa8ef7'
+            >>> NodeStyle('rgb(122,17,234)@7').get_color_id()
+            'rgb.122.17.234'
+            >>> NodeStyle('rgb( 23%, 5 %, 100% )@8').get_color_id()
+            'rgb.23p.5p.100p'
+        """
+        color_id = self.color
+
+        color_id = re.sub(r'#|\)|\s', '', color_id) # remove '#', ')' and whitespace characters
+        color_id = re.sub(r'\(|,', '.', color_id)   # replace '(' and ',' by '.'
+        color_id = re.sub(r'%', 'p', color_id)      # replace '%' by 'p'
+
+        return color_id
+
 
 class NodeSVG:
     """This class defines a tree node and its SVG characteristics (style, position in the SVG image).
@@ -509,7 +549,7 @@ class NodeSVG:
                     color = self.style.color
                 else:
                     # find the gradient color previously defined
-                    color = f'url(#grad_{self.style.color}_{child.style.color})'
+                    color = f'url(#grad_{self.style.get_color_id()}_{child.style.get_color_id()})'
             else:
                 color = 'black'
 
@@ -549,7 +589,7 @@ class NodeSVG:
         self.svg_gradient = ''
 
         for child in self.children:
-            gradient_id = f'grad_{self.style.color}_{child.style.color}'
+            gradient_id = f'grad_{self.style.get_color_id()}_{child.style.get_color_id()}'
 
             if self.style.color != child.style.color and gradient_id not in created_gradient_list:
                 self.svg_gradient += (f'        <linearGradient id="{gradient_id}" x1="0%" x2="0%" y1="0%" y2="100%">\n'

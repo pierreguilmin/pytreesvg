@@ -54,6 +54,16 @@ class TestClassNodeStyle(unittest.TestCase):
         self.assertEqual(str(self.style_4), 'rgb(122,17,234)@7')
         self.assertEqual(str(self.style_5), 'rgb(23%,5%,100%)@10')
 
+    def test_get_color_id(self):
+        self.assertEqual(self.style_1.get_color_id(), 'green')
+        self.assertEqual(self.style_2.get_color_id(), 'aa8ef7')
+        self.assertEqual(self.style_3.get_color_id(), 'f00')
+        self.assertEqual(self.style_4.get_color_id(), 'rgb.122.17.234')
+        self.assertEqual(self.style_5.get_color_id(), 'rgb.23p.5p.100p')
+
+        self.assertEqual(NodeStyle('rgb( 122, 17, 234 )@7').get_color_id(), 'rgb.122.17.234')
+        self.assertEqual(NodeStyle('rgb( 23%, 5 %, 100% )@7').get_color_id(), 'rgb.23p.5p.100p')
+
 
 class TestClassNodeSVG(unittest.TestCase):
     """Unit test for the ``NodeSVG`` class."""
