@@ -114,6 +114,67 @@ Create the tree programatically
    :align: center
    :alt: example 3
 
+.. admonition:: See `example_3.svg`
+   :class: toggle
+
+   .. literalinclude:: _static/example_3.svg
+      :language: xml
+
 You may notice in this example that the :meth:`pytreesvg.node_svg.NodeSVG.add_child` method is not doing a deep copy of 
 the given ``NodeSVG`` object, any subsequent modification of the given node will modify the tree containing this node (
 see :meth:`pytreesvg.node_svg.NodeSVG.add_child` **Warnings** to have an example).
+
+Create some random tree
+-----------------------
+
+Let's create a random tree with the default creation parameters:
+
+.. testcode::
+
+   from pytreesvg.node_svg import NodeSVG
+   import random
+
+   random.seed(11) # set random number generator seed for reproducible results
+
+   # create random tree
+   tree = NodeSVG.get_random_tree()
+
+   tree.to_svg(path='source/_static/example_4.1.svg', width=600, height=600, gradient_color=True)
+
+.. figure:: _static/example_4.1.svg
+   :align: center
+   :alt: example 4.1
+
+.. admonition:: See `example_4.1.svg`
+   :class: toggle
+
+   .. literalinclude:: _static/example_4.1.svg
+      :language: xml
+
+Now let's customize a little the random tree creation parameters:
+
+.. testcode::
+
+   from pytreesvg.node_svg import NodeSVG
+   import random
+
+   random.seed(30) # set random number generator seed for reproducible results
+
+   # create random tree with custom creation parameters
+   tree = NodeSVG.get_random_tree(max_depth=3,
+                                  n_children=[0, 1, 2, 3, 4],
+                                  values=['Michel', 'Julia', 'Robert'],
+                                  sizes=[7, 10, 13],
+                                  colors=['crimson', 'salmon', '#ffcc5c', 'rgb(58%, 10%, 10%)'])
+
+   tree.to_svg(path='source/_static/example_4.2.svg', width=800, height=600, gradient_color=True)
+
+.. figure:: _static/example_4.2.svg
+   :align: center
+   :alt: example 4.2
+
+.. admonition:: See `example_4.2.svg`
+   :class: toggle
+
+   .. literalinclude:: _static/example_4.2.svg
+      :language: xml

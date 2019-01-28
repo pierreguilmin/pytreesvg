@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+<svg width="800" height="600" version="1.1" xmlns="http://www.w3.org/2000/svg">
+
+    <!-- image title -->
+    <title>Tree graphic created with pytreesvg</title>
+
+    <defs>
+        <!-- linear gradient definitions -->
+        <linearGradient id="grad_ffcc5c_salmon" x1="0%" x2="0%" y1="0%" y2="100%">
+           <stop offset="0%" stop-color="#ffcc5c"/>
+           <stop offset="100%" stop-color="salmon"/>
+        </linearGradient>
+        <linearGradient id="grad_salmon_rgb.58p.10p.10p" x1="0%" x2="0%" y1="0%" y2="100%">
+           <stop offset="0%" stop-color="salmon"/>
+           <stop offset="100%" stop-color="rgb(58%, 10%, 10%)"/>
+        </linearGradient>
+        <linearGradient id="grad_ffcc5c_rgb.58p.10p.10p" x1="0%" x2="0%" y1="0%" y2="100%">
+           <stop offset="0%" stop-color="#ffcc5c"/>
+           <stop offset="100%" stop-color="rgb(58%, 10%, 10%)"/>
+        </linearGradient>
+        <linearGradient id="grad_rgb.58p.10p.10p_ffcc5c" x1="0%" x2="0%" y1="0%" y2="100%">
+           <stop offset="0%" stop-color="rgb(58%, 10%, 10%)"/>
+           <stop offset="100%" stop-color="#ffcc5c"/>
+        </linearGradient>
+        <linearGradient id="grad_rgb.58p.10p.10p_crimson" x1="0%" x2="0%" y1="0%" y2="100%">
+           <stop offset="0%" stop-color="rgb(58%, 10%, 10%)"/>
+           <stop offset="100%" stop-color="crimson"/>
+        </linearGradient>
+        <linearGradient id="grad_rgb.58p.10p.10p_salmon" x1="0%" x2="0%" y1="0%" y2="100%">
+           <stop offset="0%" stop-color="rgb(58%, 10%, 10%)"/>
+           <stop offset="100%" stop-color="salmon"/>
+        </linearGradient>
+        <linearGradient id="grad_salmon_crimson" x1="0%" x2="0%" y1="0%" y2="100%">
+           <stop offset="0%" stop-color="salmon"/>
+           <stop offset="100%" stop-color="crimson"/>
+        </linearGradient>
+    </defs>
+
+    <!-- image border -->
+    <rect x="0" y="0" width="800" height="600" style="stroke: #000000; fill: none;"/>
+
+    <!-- Node 'Robert' -->
+    <line x1="400.0" y1="75.0" x2="100.0" y2="225.0" stroke="url(#grad_ffcc5c_salmon)" stroke-width="2"/> <!-- edge to node 'Julia' -->
+    <line x1="400.0" y1="75.0" x2="300.0" y2="225.0" stroke="#ffcc5c" stroke-width="2"/> <!-- edge to node 'Julia' -->
+    <line x1="400.0" y1="75.0" x2="500.0" y2="225.0" stroke="url(#grad_ffcc5c_salmon)" stroke-width="2"/> <!-- edge to node 'Michel' -->
+    <line x1="400.0" y1="75.0" x2="700.0" y2="225.0" stroke="url(#grad_ffcc5c_rgb.58p.10p.10p)" stroke-width="2"/> <!-- edge to node 'Julia' -->
+    <circle cx="400.0" cy="75.0" r="7" fill="#ffcc5c"/>
+
+        <!-- Node 'Julia' -->
+        <line x1="100.0" y1="225.0" x2="33.33333333333333" y2="375.0" stroke="url(#grad_salmon_rgb.58p.10p.10p)" stroke-width="2"/> <!-- edge to node 'Robert' -->
+        <line x1="100.0" y1="225.0" x2="100.0" y2="375.0" stroke="url(#grad_salmon_rgb.58p.10p.10p)" stroke-width="2"/> <!-- edge to node 'Michel' -->
+        <line x1="100.0" y1="225.0" x2="166.66666666666669" y2="375.0" stroke="url(#grad_salmon_rgb.58p.10p.10p)" stroke-width="2"/> <!-- edge to node 'Robert' -->
+        <circle cx="100.0" cy="225.0" r="7" fill="salmon"/>
+
+            <!-- Node 'Robert' -->
+            <circle cx="33.33333333333333" cy="375.0" r="7" fill="rgb(58%, 10%, 10%)"/>
+
+            <!-- Node 'Michel' -->
+            <line x1="100.0" y1="375.0" x2="100.0" y2="525.0" stroke="url(#grad_rgb.58p.10p.10p_crimson)" stroke-width="2"/> <!-- edge to node 'Michel' -->
+            <circle cx="100.0" cy="375.0" r="13" fill="rgb(58%, 10%, 10%)"/>
+
+                <!-- Node 'Michel' -->
+                <circle cx="100.0" cy="525.0" r="7" fill="crimson"/>
+
+            <!-- Node 'Robert' -->
+            <line x1="166.66666666666669" y1="375.0" x2="141.66666666666666" y2="525.0" stroke="url(#grad_rgb.58p.10p.10p_crimson)" stroke-width="2"/> <!-- edge to node 'Julia' -->
+            <line x1="166.66666666666669" y1="375.0" x2="158.33333333333331" y2="525.0" stroke="url(#grad_rgb.58p.10p.10p_ffcc5c)" stroke-width="2"/> <!-- edge to node 'Julia' -->
+            <line x1="166.66666666666669" y1="375.0" x2="175.0" y2="525.0" stroke="url(#grad_rgb.58p.10p.10p_ffcc5c)" stroke-width="2"/> <!-- edge to node 'Robert' -->
+            <line x1="166.66666666666669" y1="375.0" x2="191.66666666666666" y2="525.0" stroke="rgb(58%, 10%, 10%)" stroke-width="2"/> <!-- edge to node 'Julia' -->
+            <circle cx="166.66666666666669" cy="375.0" r="10" fill="rgb(58%, 10%, 10%)"/>
+
+                <!-- Node 'Julia' -->
+                <circle cx="141.66666666666666" cy="525.0" r="7" fill="crimson"/>
+
+                <!-- Node 'Julia' -->
+                <circle cx="158.33333333333331" cy="525.0" r="13" fill="#ffcc5c"/>
+
+                <!-- Node 'Robert' -->
+                <circle cx="175.0" cy="525.0" r="13" fill="#ffcc5c"/>
+
+                <!-- Node 'Julia' -->
+                <circle cx="191.66666666666666" cy="525.0" r="7" fill="rgb(58%, 10%, 10%)"/>
+
+        <!-- Node 'Julia' -->
+        <circle cx="300.0" cy="225.0" r="13" fill="#ffcc5c"/>
+
+        <!-- Node 'Michel' -->
+        <line x1="500.0" y1="225.0" x2="450.0" y2="375.0" stroke="url(#grad_salmon_crimson)" stroke-width="2"/> <!-- edge to node 'Michel' -->
+        <line x1="500.0" y1="225.0" x2="550.0" y2="375.0" stroke="url(#grad_salmon_rgb.58p.10p.10p)" stroke-width="2"/> <!-- edge to node 'Julia' -->
+        <circle cx="500.0" cy="225.0" r="13" fill="salmon"/>
+
+            <!-- Node 'Michel' -->
+            <line x1="450.0" y1="375.0" x2="412.5" y2="525.0" stroke="url(#grad_crimson_ffcc5c)" stroke-width="2"/> <!-- edge to node 'Michel' -->
+            <line x1="450.0" y1="375.0" x2="437.5" y2="525.0" stroke="url(#grad_crimson_rgb.58p.10p.10p)" stroke-width="2"/> <!-- edge to node 'Robert' -->
+            <line x1="450.0" y1="375.0" x2="462.5" y2="525.0" stroke="url(#grad_crimson_rgb.58p.10p.10p)" stroke-width="2"/> <!-- edge to node 'Robert' -->
+            <line x1="450.0" y1="375.0" x2="487.5" y2="525.0" stroke="url(#grad_crimson_ffcc5c)" stroke-width="2"/> <!-- edge to node 'Michel' -->
+            <circle cx="450.0" cy="375.0" r="10" fill="crimson"/>
+
+                <!-- Node 'Michel' -->
+                <circle cx="412.5" cy="525.0" r="13" fill="#ffcc5c"/>
+
+                <!-- Node 'Robert' -->
+                <circle cx="437.5" cy="525.0" r="10" fill="rgb(58%, 10%, 10%)"/>
+
+                <!-- Node 'Robert' -->
+                <circle cx="462.5" cy="525.0" r="10" fill="rgb(58%, 10%, 10%)"/>
+
+                <!-- Node 'Michel' -->
+                <circle cx="487.5" cy="525.0" r="7" fill="#ffcc5c"/>
+
+            <!-- Node 'Julia' -->
+            <line x1="550.0" y1="375.0" x2="516.6666666666666" y2="525.0" stroke="url(#grad_rgb.58p.10p.10p_ffcc5c)" stroke-width="2"/> <!-- edge to node 'Robert' -->
+            <line x1="550.0" y1="375.0" x2="550.0" y2="525.0" stroke="url(#grad_rgb.58p.10p.10p_salmon)" stroke-width="2"/> <!-- edge to node 'Michel' -->
+            <line x1="550.0" y1="375.0" x2="583.3333333333334" y2="525.0" stroke="rgb(58%, 10%, 10%)" stroke-width="2"/> <!-- edge to node 'Robert' -->
+            <circle cx="550.0" cy="375.0" r="10" fill="rgb(58%, 10%, 10%)"/>
+
+                <!-- Node 'Robert' -->
+                <circle cx="516.6666666666666" cy="525.0" r="10" fill="#ffcc5c"/>
+
+                <!-- Node 'Michel' -->
+                <circle cx="550.0" cy="525.0" r="13" fill="salmon"/>
+
+                <!-- Node 'Robert' -->
+                <circle cx="583.3333333333334" cy="525.0" r="7" fill="rgb(58%, 10%, 10%)"/>
+
+        <!-- Node 'Julia' -->
+        <line x1="700.0" y1="225.0" x2="625.0" y2="375.0" stroke="url(#grad_rgb.58p.10p.10p_ffcc5c)" stroke-width="2"/> <!-- edge to node 'Robert' -->
+        <line x1="700.0" y1="225.0" x2="675.0" y2="375.0" stroke="url(#grad_rgb.58p.10p.10p_crimson)" stroke-width="2"/> <!-- edge to node 'Robert' -->
+        <line x1="700.0" y1="225.0" x2="725.0" y2="375.0" stroke="url(#grad_rgb.58p.10p.10p_ffcc5c)" stroke-width="2"/> <!-- edge to node 'Robert' -->
+        <line x1="700.0" y1="225.0" x2="775.0" y2="375.0" stroke="url(#grad_rgb.58p.10p.10p_salmon)" stroke-width="2"/> <!-- edge to node 'Michel' -->
+        <circle cx="700.0" cy="225.0" r="10" fill="rgb(58%, 10%, 10%)"/>
+
+            <!-- Node 'Robert' -->
+            <line x1="625.0" y1="375.0" x2="608.3333333333334" y2="525.0" stroke="#ffcc5c" stroke-width="2"/> <!-- edge to node 'Robert' -->
+            <line x1="625.0" y1="375.0" x2="625.0" y2="525.0" stroke="#ffcc5c" stroke-width="2"/> <!-- edge to node 'Julia' -->
+            <line x1="625.0" y1="375.0" x2="641.6666666666666" y2="525.0" stroke="url(#grad_ffcc5c_salmon)" stroke-width="2"/> <!-- edge to node 'Julia' -->
+            <circle cx="625.0" cy="375.0" r="10" fill="#ffcc5c"/>
+
+                <!-- Node 'Robert' -->
+                <circle cx="608.3333333333334" cy="525.0" r="13" fill="#ffcc5c"/>
+
+                <!-- Node 'Julia' -->
+                <circle cx="625.0" cy="525.0" r="13" fill="#ffcc5c"/>
+
+                <!-- Node 'Julia' -->
+                <circle cx="641.6666666666666" cy="525.0" r="13" fill="salmon"/>
+
+            <!-- Node 'Robert' -->
+            <circle cx="675.0" cy="375.0" r="7" fill="crimson"/>
+
+            <!-- Node 'Robert' -->
+            <line x1="725.0" y1="375.0" x2="706.25" y2="525.0" stroke="#ffcc5c" stroke-width="2"/> <!-- edge to node 'Julia' -->
+            <line x1="725.0" y1="375.0" x2="718.75" y2="525.0" stroke="url(#grad_ffcc5c_crimson)" stroke-width="2"/> <!-- edge to node 'Robert' -->
+            <line x1="725.0" y1="375.0" x2="731.25" y2="525.0" stroke="url(#grad_ffcc5c_salmon)" stroke-width="2"/> <!-- edge to node 'Robert' -->
+            <line x1="725.0" y1="375.0" x2="743.75" y2="525.0" stroke="#ffcc5c" stroke-width="2"/> <!-- edge to node 'Julia' -->
+            <circle cx="725.0" cy="375.0" r="7" fill="#ffcc5c"/>
+
+                <!-- Node 'Julia' -->
+                <circle cx="706.25" cy="525.0" r="13" fill="#ffcc5c"/>
+
+                <!-- Node 'Robert' -->
+                <circle cx="718.75" cy="525.0" r="10" fill="crimson"/>
+
+                <!-- Node 'Robert' -->
+                <circle cx="731.25" cy="525.0" r="10" fill="salmon"/>
+
+                <!-- Node 'Julia' -->
+                <circle cx="743.75" cy="525.0" r="10" fill="#ffcc5c"/>
+
+            <!-- Node 'Michel' -->
+            <line x1="775.0" y1="375.0" x2="756.25" y2="525.0" stroke="url(#grad_salmon_crimson)" stroke-width="2"/> <!-- edge to node 'Robert' -->
+            <line x1="775.0" y1="375.0" x2="768.75" y2="525.0" stroke="salmon" stroke-width="2"/> <!-- edge to node 'Julia' -->
+            <line x1="775.0" y1="375.0" x2="781.25" y2="525.0" stroke="url(#grad_salmon_crimson)" stroke-width="2"/> <!-- edge to node 'Michel' -->
+            <line x1="775.0" y1="375.0" x2="793.75" y2="525.0" stroke="url(#grad_salmon_rgb.58p.10p.10p)" stroke-width="2"/> <!-- edge to node 'Michel' -->
+            <circle cx="775.0" cy="375.0" r="10" fill="salmon"/>
+
+                <!-- Node 'Robert' -->
+                <circle cx="756.25" cy="525.0" r="10" fill="crimson"/>
+
+                <!-- Node 'Julia' -->
+                <circle cx="768.75" cy="525.0" r="13" fill="salmon"/>
+
+                <!-- Node 'Michel' -->
+                <circle cx="781.25" cy="525.0" r="10" fill="crimson"/>
+
+                <!-- Node 'Michel' -->
+                <circle cx="793.75" cy="525.0" r="10" fill="rgb(58%, 10%, 10%)"/>
+
+</svg>

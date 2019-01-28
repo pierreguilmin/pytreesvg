@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
+<svg width="600" height="600" version="1.1" xmlns="http://www.w3.org/2000/svg">
+
+    <!-- image title -->
+    <title>Tree graphic created with pytreesvg</title>
+
+    <defs>
+        <!-- linear gradient definitions -->
+        <linearGradient id="grad_rgb.231.238.231_rgb.243.95.48" x1="0%" x2="0%" y1="0%" y2="100%">
+           <stop offset="0%" stop-color="rgb(231,238,231)"/>
+           <stop offset="100%" stop-color="rgb(243,95,48)"/>
+        </linearGradient>
+        <linearGradient id="grad_rgb.243.95.48_rgb.46.21.202" x1="0%" x2="0%" y1="0%" y2="100%">
+           <stop offset="0%" stop-color="rgb(243,95,48)"/>
+           <stop offset="100%" stop-color="rgb(46,21,202)"/>
+        </linearGradient>
+        <linearGradient id="grad_rgb.46.21.202_rgb.7.32.30" x1="0%" x2="0%" y1="0%" y2="100%">
+           <stop offset="0%" stop-color="rgb(46,21,202)"/>
+           <stop offset="100%" stop-color="rgb(7,32,30)"/>
+        </linearGradient>
+        <linearGradient id="grad_rgb.7.32.30_rgb.15.237.167" x1="0%" x2="0%" y1="0%" y2="100%">
+           <stop offset="0%" stop-color="rgb(7,32,30)"/>
+           <stop offset="100%" stop-color="rgb(15,237,167)"/>
+        </linearGradient>
+        <linearGradient id="grad_rgb.15.237.167_rgb.119.150.255" x1="0%" x2="0%" y1="0%" y2="100%">
+           <stop offset="0%" stop-color="rgb(15,237,167)"/>
+           <stop offset="100%" stop-color="rgb(119,150,255)"/>
+        </linearGradient>
+        <linearGradient id="grad_rgb.15.237.167_rgb.142.208.42" x1="0%" x2="0%" y1="0%" y2="100%">
+           <stop offset="0%" stop-color="rgb(15,237,167)"/>
+           <stop offset="100%" stop-color="rgb(142,208,42)"/>
+        </linearGradient>
+        <linearGradient id="grad_rgb.15.237.167_rgb.147.15.35" x1="0%" x2="0%" y1="0%" y2="100%">
+           <stop offset="0%" stop-color="rgb(15,237,167)"/>
+           <stop offset="100%" stop-color="rgb(147,15,35)"/>
+        </linearGradient>
+        <linearGradient id="grad_rgb.15.237.167_rgb.55.148.197" x1="0%" x2="0%" y1="0%" y2="100%">
+           <stop offset="0%" stop-color="rgb(15,237,167)"/>
+           <stop offset="100%" stop-color="rgb(55,148,197)"/>
+        </linearGradient>
+        <linearGradient id="grad_rgb.46.21.202_rgb.109.107.26" x1="0%" x2="0%" y1="0%" y2="100%">
+           <stop offset="0%" stop-color="rgb(46,21,202)"/>
+           <stop offset="100%" stop-color="rgb(109,107,26)"/>
+        </linearGradient>
+        <linearGradient id="grad_rgb.109.107.26_rgb.214.37.101" x1="0%" x2="0%" y1="0%" y2="100%">
+           <stop offset="0%" stop-color="rgb(109,107,26)"/>
+           <stop offset="100%" stop-color="rgb(214,37,101)"/>
+        </linearGradient>
+        <linearGradient id="grad_rgb.109.107.26_rgb.159.170.7" x1="0%" x2="0%" y1="0%" y2="100%">
+           <stop offset="0%" stop-color="rgb(109,107,26)"/>
+           <stop offset="100%" stop-color="rgb(159,170,7)"/>
+        </linearGradient>
+        <linearGradient id="grad_rgb.159.170.7_rgb.126.51.5" x1="0%" x2="0%" y1="0%" y2="100%">
+           <stop offset="0%" stop-color="rgb(159,170,7)"/>
+           <stop offset="100%" stop-color="rgb(126,51,5)"/>
+        </linearGradient>
+        <linearGradient id="grad_rgb.109.107.26_rgb.90.96.229" x1="0%" x2="0%" y1="0%" y2="100%">
+           <stop offset="0%" stop-color="rgb(109,107,26)"/>
+           <stop offset="100%" stop-color="rgb(90,96,229)"/>
+        </linearGradient>
+        <linearGradient id="grad_rgb.90.96.229_rgb.214.196.59" x1="0%" x2="0%" y1="0%" y2="100%">
+           <stop offset="0%" stop-color="rgb(90,96,229)"/>
+           <stop offset="100%" stop-color="rgb(214,196,59)"/>
+        </linearGradient>
+        <linearGradient id="grad_rgb.46.21.202_rgb.0.138.155" x1="0%" x2="0%" y1="0%" y2="100%">
+           <stop offset="0%" stop-color="rgb(46,21,202)"/>
+           <stop offset="100%" stop-color="rgb(0,138,155)"/>
+        </linearGradient>
+        <linearGradient id="grad_rgb.0.138.155_rgb.201.51.21" x1="0%" x2="0%" y1="0%" y2="100%">
+           <stop offset="0%" stop-color="rgb(0,138,155)"/>
+           <stop offset="100%" stop-color="rgb(201,51,21)"/>
+        </linearGradient>
+        <linearGradient id="grad_rgb.201.51.21_rgb.132.4.168" x1="0%" x2="0%" y1="0%" y2="100%">
+           <stop offset="0%" stop-color="rgb(201,51,21)"/>
+           <stop offset="100%" stop-color="rgb(132,4,168)"/>
+        </linearGradient>
+        <linearGradient id="grad_rgb.201.51.21_rgb.38.46.106" x1="0%" x2="0%" y1="0%" y2="100%">
+           <stop offset="0%" stop-color="rgb(201,51,21)"/>
+           <stop offset="100%" stop-color="rgb(38,46,106)"/>
+        </linearGradient>
+        <linearGradient id="grad_rgb.201.51.21_rgb.188.190.232" x1="0%" x2="0%" y1="0%" y2="100%">
+           <stop offset="0%" stop-color="rgb(201,51,21)"/>
+           <stop offset="100%" stop-color="rgb(188,190,232)"/>
+        </linearGradient>
+        <linearGradient id="grad_rgb.46.21.202_rgb.69.197.93" x1="0%" x2="0%" y1="0%" y2="100%">
+           <stop offset="0%" stop-color="rgb(46,21,202)"/>
+           <stop offset="100%" stop-color="rgb(69,197,93)"/>
+        </linearGradient>
+        <linearGradient id="grad_rgb.69.197.93_rgb.127.97.81" x1="0%" x2="0%" y1="0%" y2="100%">
+           <stop offset="0%" stop-color="rgb(69,197,93)"/>
+           <stop offset="100%" stop-color="rgb(127,97,81)"/>
+        </linearGradient>
+        <linearGradient id="grad_rgb.127.97.81_rgb.247.40.215" x1="0%" x2="0%" y1="0%" y2="100%">
+           <stop offset="0%" stop-color="rgb(127,97,81)"/>
+           <stop offset="100%" stop-color="rgb(247,40,215)"/>
+        </linearGradient>
+        <linearGradient id="grad_rgb.127.97.81_rgb.19.130.122" x1="0%" x2="0%" y1="0%" y2="100%">
+           <stop offset="0%" stop-color="rgb(127,97,81)"/>
+           <stop offset="100%" stop-color="rgb(19,130,122)"/>
+        </linearGradient>
+        <linearGradient id="grad_rgb.127.97.81_rgb.251.150.89" x1="0%" x2="0%" y1="0%" y2="100%">
+           <stop offset="0%" stop-color="rgb(127,97,81)"/>
+           <stop offset="100%" stop-color="rgb(251,150,89)"/>
+        </linearGradient>
+    </defs>
+
+    <!-- image border -->
+    <rect x="0" y="0" width="600" height="600" style="stroke: #000000; fill: none;"/>
+
+    <!-- Node 8 -->
+    <line x1="300.0" y1="50.0" x2="300.0" y2="150.0" stroke="url(#grad_rgb.231.238.231_rgb.243.95.48)" stroke-width="2"/> <!-- edge to node 7 -->
+    <circle cx="300.0" cy="50.0" r="11" fill="rgb(231,238,231)"/>
+
+        <!-- Node 7 -->
+        <line x1="300.0" y1="150.0" x2="300.0" y2="250.0" stroke="url(#grad_rgb.243.95.48_rgb.46.21.202)" stroke-width="2"/> <!-- edge to node 7 -->
+        <circle cx="300.0" cy="150.0" r="14" fill="rgb(243,95,48)"/>
+
+            <!-- Node 7 -->
+            <line x1="300.0" y1="250.0" x2="75.0" y2="350.0" stroke="url(#grad_rgb.46.21.202_rgb.7.32.30)" stroke-width="2"/> <!-- edge to node 0 -->
+            <line x1="300.0" y1="250.0" x2="225.0" y2="350.0" stroke="url(#grad_rgb.46.21.202_rgb.109.107.26)" stroke-width="2"/> <!-- edge to node 7 -->
+            <line x1="300.0" y1="250.0" x2="375.0" y2="350.0" stroke="url(#grad_rgb.46.21.202_rgb.0.138.155)" stroke-width="2"/> <!-- edge to node 0 -->
+            <line x1="300.0" y1="250.0" x2="525.0" y2="350.0" stroke="url(#grad_rgb.46.21.202_rgb.69.197.93)" stroke-width="2"/> <!-- edge to node 2 -->
+            <circle cx="300.0" cy="250.0" r="10" fill="rgb(46,21,202)"/>
+
+                <!-- Node 0 -->
+                <line x1="75.0" y1="350.0" x2="75.0" y2="450.0" stroke="url(#grad_rgb.7.32.30_rgb.15.237.167)" stroke-width="2"/> <!-- edge to node 7 -->
+                <circle cx="75.0" cy="350.0" r="11" fill="rgb(7,32,30)"/>
+
+                    <!-- Node 7 -->
+                    <line x1="75.0" y1="450.0" x2="18.75" y2="550.0" stroke="url(#grad_rgb.15.237.167_rgb.119.150.255)" stroke-width="2"/> <!-- edge to node 0 -->
+                    <line x1="75.0" y1="450.0" x2="56.25" y2="550.0" stroke="url(#grad_rgb.15.237.167_rgb.142.208.42)" stroke-width="2"/> <!-- edge to node 4 -->
+                    <line x1="75.0" y1="450.0" x2="93.75" y2="550.0" stroke="url(#grad_rgb.15.237.167_rgb.147.15.35)" stroke-width="2"/> <!-- edge to node 9 -->
+                    <line x1="75.0" y1="450.0" x2="131.25" y2="550.0" stroke="url(#grad_rgb.15.237.167_rgb.55.148.197)" stroke-width="2"/> <!-- edge to node 1 -->
+                    <circle cx="75.0" cy="450.0" r="11" fill="rgb(15,237,167)"/>
+
+                        <!-- Node 0 -->
+                        <circle cx="18.75" cy="550.0" r="7" fill="rgb(119,150,255)"/>
+
+                        <!-- Node 4 -->
+                        <circle cx="56.25" cy="550.0" r="15" fill="rgb(142,208,42)"/>
+
+                        <!-- Node 9 -->
+                        <circle cx="93.75" cy="550.0" r="8" fill="rgb(147,15,35)"/>
+
+                        <!-- Node 1 -->
+                        <circle cx="131.25" cy="550.0" r="5" fill="rgb(55,148,197)"/>
+
+                <!-- Node 7 -->
+                <line x1="225.0" y1="350.0" x2="175.0" y2="450.0" stroke="url(#grad_rgb.109.107.26_rgb.214.37.101)" stroke-width="2"/> <!-- edge to node 4 -->
+                <line x1="225.0" y1="350.0" x2="225.0" y2="450.0" stroke="url(#grad_rgb.109.107.26_rgb.159.170.7)" stroke-width="2"/> <!-- edge to node 6 -->
+                <line x1="225.0" y1="350.0" x2="275.0" y2="450.0" stroke="url(#grad_rgb.109.107.26_rgb.90.96.229)" stroke-width="2"/> <!-- edge to node 8 -->
+                <circle cx="225.0" cy="350.0" r="17" fill="rgb(109,107,26)"/>
+
+                    <!-- Node 4 -->
+                    <circle cx="175.0" cy="450.0" r="15" fill="rgb(214,37,101)"/>
+
+                    <!-- Node 6 -->
+                    <line x1="225.0" y1="450.0" x2="225.0" y2="550.0" stroke="url(#grad_rgb.159.170.7_rgb.126.51.5)" stroke-width="2"/> <!-- edge to node 0 -->
+                    <circle cx="225.0" cy="450.0" r="8" fill="rgb(159,170,7)"/>
+
+                        <!-- Node 0 -->
+                        <circle cx="225.0" cy="550.0" r="19" fill="rgb(126,51,5)"/>
+
+                    <!-- Node 8 -->
+                    <line x1="275.0" y1="450.0" x2="275.0" y2="550.0" stroke="url(#grad_rgb.90.96.229_rgb.214.196.59)" stroke-width="2"/> <!-- edge to node 6 -->
+                    <circle cx="275.0" cy="450.0" r="11" fill="rgb(90,96,229)"/>
+
+                        <!-- Node 6 -->
+                        <circle cx="275.0" cy="550.0" r="18" fill="rgb(214,196,59)"/>
+
+                <!-- Node 0 -->
+                <line x1="375.0" y1="350.0" x2="375.0" y2="450.0" stroke="url(#grad_rgb.0.138.155_rgb.201.51.21)" stroke-width="2"/> <!-- edge to node 2 -->
+                <circle cx="375.0" cy="350.0" r="11" fill="rgb(0,138,155)"/>
+
+                    <!-- Node 2 -->
+                    <line x1="375.0" y1="450.0" x2="325.0" y2="550.0" stroke="url(#grad_rgb.201.51.21_rgb.132.4.168)" stroke-width="2"/> <!-- edge to node 4 -->
+                    <line x1="375.0" y1="450.0" x2="375.0" y2="550.0" stroke="url(#grad_rgb.201.51.21_rgb.38.46.106)" stroke-width="2"/> <!-- edge to node 9 -->
+                    <line x1="375.0" y1="450.0" x2="425.0" y2="550.0" stroke="url(#grad_rgb.201.51.21_rgb.188.190.232)" stroke-width="2"/> <!-- edge to node 2 -->
+                    <circle cx="375.0" cy="450.0" r="11" fill="rgb(201,51,21)"/>
+
+                        <!-- Node 4 -->
+                        <circle cx="325.0" cy="550.0" r="17" fill="rgb(132,4,168)"/>
+
+                        <!-- Node 9 -->
+                        <circle cx="375.0" cy="550.0" r="12" fill="rgb(38,46,106)"/>
+
+                        <!-- Node 2 -->
+                        <circle cx="425.0" cy="550.0" r="20" fill="rgb(188,190,232)"/>
+
+                <!-- Node 2 -->
+                <line x1="525.0" y1="350.0" x2="525.0" y2="450.0" stroke="url(#grad_rgb.69.197.93_rgb.127.97.81)" stroke-width="2"/> <!-- edge to node 8 -->
+                <circle cx="525.0" cy="350.0" r="14" fill="rgb(69,197,93)"/>
+
+                    <!-- Node 8 -->
+                    <line x1="525.0" y1="450.0" x2="475.0" y2="550.0" stroke="url(#grad_rgb.127.97.81_rgb.247.40.215)" stroke-width="2"/> <!-- edge to node 0 -->
+                    <line x1="525.0" y1="450.0" x2="525.0" y2="550.0" stroke="url(#grad_rgb.127.97.81_rgb.19.130.122)" stroke-width="2"/> <!-- edge to node 6 -->
+                    <line x1="525.0" y1="450.0" x2="575.0" y2="550.0" stroke="url(#grad_rgb.127.97.81_rgb.251.150.89)" stroke-width="2"/> <!-- edge to node 1 -->
+                    <circle cx="525.0" cy="450.0" r="11" fill="rgb(127,97,81)"/>
+
+                        <!-- Node 0 -->
+                        <circle cx="475.0" cy="550.0" r="8" fill="rgb(247,40,215)"/>
+
+                        <!-- Node 6 -->
+                        <circle cx="525.0" cy="550.0" r="13" fill="rgb(19,130,122)"/>
+
+                        <!-- Node 1 -->
+                        <circle cx="575.0" cy="550.0" r="9" fill="rgb(251,150,89)"/>
+
+</svg>
