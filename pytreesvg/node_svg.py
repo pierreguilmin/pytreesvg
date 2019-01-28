@@ -393,9 +393,9 @@ class NodeSVG:
         ----------
         values: list, optional
             List of possible values for the random node (`default=range(0, 10)`).
-        sizes: list, optional
+        sizes: list of int, optional
             List of possible sizes for the random node (`default=range(5, 21)`).
-        colors: list, optional
+        colors: list of string, optional
             List of possible colors for the random node, if not specified the color will be selected randomly over the 
             whole color spectrum (`default=None`).
 
