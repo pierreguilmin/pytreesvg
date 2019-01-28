@@ -9,6 +9,9 @@ Welcome to **🌿 pytreesvg** documentation!
    :target: https://pytreesvg.readthedocs.io/en/latest/?badge=latest
    :alt: documentation status
 
+.. image:: https://img.shields.io/github/license/PierreGuilmin/pytreesvg.svg
+   :target: https://github.com/PierreGuilmin/pytreesvg/blob/master/LICENSE
+   :alt: MIT license
 
 This project is a lightweight Python module to render SVG trees like the following:
 

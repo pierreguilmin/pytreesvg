@@ -1,5 +1,6 @@
 [![build status](https://travis-ci.com/PierreGuilmin/pytreesvg.svg?branch=master)](https://travis-ci.com/PierreGuilmin/pytreesvg)
 [![documentation status](https://readthedocs.org/projects/pytreesvg/badge/?version=latest)](https://pytreesvg.readthedocs.io/en/latest/?badge=latest)
+[![MIT license](https://img.shields.io/github/license/PierreGuilmin/pytreesvg.svg)](https://github.com/PierreGuilmin/pytreesvg/blob/master/LICENSE)
 
 :construction: work in progress... :construction:
 
