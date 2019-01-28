@@ -1,0 +1,26 @@
+<!--
+Extend base theme to define collapsible section, see:
+- https://stackoverflow.com/questions/2454577/sphinx-restructuredtext-show-hide-code-snippets
+- https://training.plone.org/5/mastering-plone/about_mastering.html#exercise-1
+- https://github.com/plone/training/blob/master/mastering-plone/about_mastering.rst
+- https://www.sphinx-doc.org/en/master/templating.html
+-->
+
+{% extends "!page.html" %}
+
+{% block extrahead %}
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+{% endblock %}
+
+{% block footer %}
+  <script type="text/javascript">
+      $(document).ready(function() {
+          $(".toggle > *").hide();
+          $(".toggle .admonition-title").show();
+          $(".toggle .admonition-title").click(function() {
+              $(this).parent().children().not(".admonition-title").toggle(400);
+              $(this).parent().children(".admonition-title").toggleClass("open");
+          })
+      });
+  </script>
+{% endblock %}

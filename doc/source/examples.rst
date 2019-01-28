@@ -37,9 +37,11 @@ Let's draw a basic binary tree while comparing the basic parameters of :meth:`py
 
 You can take a quick look at the content of the ``.svg`` file created for the third figure (``example_1.3.svg``):
 
-.. literalinclude:: _static/example_1.3.svg
-   :language: xml
+.. admonition:: See `example_1.3.svg`
+   :class: toggle
 
+   .. literalinclude:: _static/example_1.3.svg
+      :language: xml
 
 Let's add some colors!
 ----------------------
@@ -72,8 +74,11 @@ Here is a more complex tree:
 
 And the created ``.svg`` file looks like:
 
-.. literalinclude:: _static/example_2.svg
-   :language: xml
+.. admonition:: See `example_2.svg`
+   :class: toggle
+
+   .. literalinclude:: _static/example_2.svg
+      :language: xml
 
 Create the tree programatically
 -------------------------------
