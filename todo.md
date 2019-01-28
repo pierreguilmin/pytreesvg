@@ -11,9 +11,9 @@
 | :cloud:      | minor modification           | `:cloud:`      |
 
 ## General
+- [x] :tada: find a license (https://choosealicense.com/)
 - [ ] :tada: add pip and virtualenv configuration
 - [ ] :tada: package code and upload it to PyPI and conda
-- [ ] :tada: find a license (https://choosealicense.com/)
 - [ ] :tada: add codacy/codecoverage GitHub marketplace extensions
 - [ ] :tada: add command-line extension
 - [ ] :tada: create `README.md` and `index.rst` gif demonstration
