@@ -26,8 +26,8 @@
 ### Sphinx
 - [x] :flashlight: necessary to add `.. testsetup::` at the beginning of every module for the doctest to work
 - [x] :sparkles: switch math rendering from `imgmath` to `mathjax` (faster builds, cleaner outputs, lighter doc, ...)
+- [x] :tada: add contact section
 - [ ] :sparkles: collapsible sections for `.svg` output
-- [ ] :tada: add contact section
 
 ## `node_svg.py`
 - `Node_SVG_Style`

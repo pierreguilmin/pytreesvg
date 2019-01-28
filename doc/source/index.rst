@@ -35,3 +35,4 @@ existing Python implementations.
    node_svg
    tools
    contribute
+   contact
