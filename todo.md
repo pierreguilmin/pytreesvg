@@ -17,14 +17,14 @@
 - [ ] :tada: add codacy/codecoverage GitHub marketplace extensions
 - [ ] :tada: add command-line extension
 - [ ] :tada: create `README.md` and `index.rst` gif demonstration
-- [ ] :tada: adverstise project on StackOverflow Q&A
+- [ ] :tada: advertise project on StackOverflow Q&A
 - [ ] :tada: add more descriptive but also funny/pretty examples
 
 ### Travis CI
 - [ ] :tada: add Windows support (update `travis/install_conda.sh` and `.travis.yml`)
 
 ### Sphinx
-- [ ] :flashlight: necessary to add `.. testsetup::` at the beginning of every module for the doctest to work
+- [x] :flashlight: necessary to add `.. testsetup::` at the beginning of every module for the doctest to work
 - [x] :sparkles: switch math rendering from `imgmath` to `mathjax` (faster builds, cleaner outputs, lighter doc, ...)
 - [ ] :sparkles: collapsible sections for `.svg` output
 - [ ] :tada: add contact section
