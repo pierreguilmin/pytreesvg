@@ -514,7 +514,9 @@ class NodeSVG:
         self.x = level_SVG_offset + map(current_node_index, -0.5, nb_node_current_level - 0.5, 0, parent_SVG_width)
 
         new_parent_SVG_width = parent_SVG_width / nb_node_current_level
-        new_level_SVG_offset = level_SVG_offset + map(current_node_index - 1, -1, nb_node_current_level - 1, 0, parent_SVG_width)
+        new_level_SVG_offset = level_SVG_offset + map(current_node_index - 1,
+                                                      -1, nb_node_current_level - 1,
+                                                      0, parent_SVG_width)
 
         for i, child in enumerate(self.children):
             child._recursively_compute_x_position(parent_SVG_width=new_parent_SVG_width,
@@ -597,7 +599,8 @@ class NodeSVG:
                                       f'           <stop offset="100%" stop-color="{child.style.color}"/>\n'
                                       f'        </linearGradient>\n')
                 created_gradient_list.append(gradient_id)
-                (child_gradient, created_gradient_list) = child._recursively_get_svg_gradient_color_defs(created_gradient_list)
+                (child_gradient,
+                 created_gradient_list) = child._recursively_get_svg_gradient_color_defs(created_gradient_list)
                 self.svg_gradient += child_gradient
 
         return (self.svg_gradient, created_gradient_list)
