@@ -439,6 +439,104 @@ class NodeSVG:
 
         return NodeSVG(value=random.choice(values), style=f'{color}@{random.choice(sizes)}')
 
+    @staticmethod
+    def get_random_tree(max_depth=5,
+                        n_children=range(0, 5),
+                        values=range(0, 10),
+                        sizes=range(5, 21),
+                        colors=None):
+        """Return a ``NodeSVG`` object being the root node of a random tree.
+
+        Parameters
+        ----------
+        max_depth: int, optional
+            Random tree max depth (the mathematically defined depth) (`default=5`).
+        n_children: list of int, optional
+            List of possible values for the number of children per node (`default=range(0, 5)`).
+        values: list, optional
+            List of possible values for the random nodes (`default=range(0, 10)`).
+        sizes: list of int, optional
+            List of possible sizes for the random nodes (`default=range(5, 21)`).
+        colors: list of string, optional
+            List of possible colors for the random nodes, if not specified the color will be selected randomly over the 
+            whole color spectrum (`default=None`).
+
+        Notes
+        -----
+        This functions uses the ``random`` module. If you need reproducible results please set the random number 
+        generator seed before calling this function::
+
+            import random
+
+            random.seed(42) # set random number generator seed to 42
+
+        Examples
+        --------
+        .. doctest::
+
+            >>> import random
+            >>> random.seed(16)
+            >>> print(NodeSVG.get_random_tree())
+            4
+            └── 4
+                └── 5
+                    └── 9
+                    └── 7
+                        └── 6
+                            └── 9
+                            └── 0
+                    └── 4
+                        └── 7
+                            └── 1
+                            └── 2
+                            └── 6
+                        └── 1
+                            └── 6
+                            └── 4
+                            └── 1
+                            └── 0
+                        └── 0
+                    └── 8
+            >>> NodeSVG.get_random_tree(max_depth=2,
+            ...                         n_children=[2],
+            ...                         values=['Michel', 'Julia', 'Robert'],
+            ...                         sizes=[18, 1, 2],
+            ...                         colors=['aqua', 'salmon', '#ff8', 'rgb(10%, 22%, 13%)'])
+            'Michel' (salmon@1, x: 0.00, y: 0.00)
+            └── 'Michel' (#ff8@1, x: 0.00, y: 0.00)
+                └── 'Julia' (salmon@18, x: 0.00, y: 0.00)
+                └── 'Julia' (salmon@1, x: 0.00, y: 0.00)
+            └── 'Michel' (rgb(10%, 22%, 13%)@1, x: 0.00, y: 0.00)
+                └── 'Julia' (salmon@18, x: 0.00, y: 0.00)
+                └── 'Julia' (aqua@1, x: 0.00, y: 0.00)
+
+        Warnings
+        --------
+        If you want to specify a unique value for one of the parameters, please still use a list format::
+
+            # bad syntax
+            NodeSVG.get_random_tree(n_children=4)
+
+            # good syntax
+            NodeSVG.get_random_node(n_children=[4])
+        """
+        if max_depth < 0:
+            return None
+
+        # create random root node
+        root_node = NodeSVG.get_random_node(values, sizes, colors)
+
+        # choose a random number of children
+        n_children_per_node = random.choice(n_children)
+
+        for i in range(n_children_per_node):
+            # create new random subtree
+            new_node = NodeSVG.get_random_tree(max_depth - 1, n_children, values, sizes, colors)
+            if new_node != None:
+                root_node.add_child(new_node)
+
+        return root_node
+
     def to_svg(self, path='node.svg', width=400, height=400, gradient_color=True, image_border=True):
         """Create a SVG image and draw the tree.
 

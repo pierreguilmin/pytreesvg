@@ -128,6 +128,29 @@ class TestClassNodeSVG(unittest.TestCase):
         with self.assertRaises(TypeError): NodeSVG.get_random_node(sizes=1)
         with self.assertRaises(Exception): NodeSVG.get_random_node(colors='aqua')
 
+    def test_get_random_tree(self):
+        random.seed(42)
+
+        self.assertEqual(repr(NodeSVG.get_random_tree()), '3 (rgb(57,12,140)@12, x: 0.00, y: 0.00)\n'
+                                                          '└── 0 (rgb(52,44,216)@5, x: 0.00, y: 0.00)')
+
+        random_tree = NodeSVG.get_random_tree(max_depth=2,
+                                              n_children=[2, 3],
+                                              values=['Michel', 'Julia', 'Robert'],
+                                              sizes=[18, 1, 2],
+                                              colors=['aqua', 'salmon', '#ff8', 'rgb(10%, 22%, 13%)'])
+        self.assertEqual(repr(random_tree), "'Michel' (salmon@2, x: 0.00, y: 0.00)\n"
+                                            "└── 'Robert' (salmon@2, x: 0.00, y: 0.00)\n"
+                                            "    └── 'Julia' (salmon@2, x: 0.00, y: 0.00)\n"
+                                            "    └── 'Michel' (aqua@2, x: 0.00, y: 0.00)\n"
+                                            "    └── 'Julia' (#ff8@18, x: 0.00, y: 0.00)\n"
+                                            "└── 'Michel' (#ff8@18, x: 0.00, y: 0.00)\n"
+                                            "    └── 'Julia' (aqua@1, x: 0.00, y: 0.00)\n"
+                                            "    └── 'Robert' (aqua@1, x: 0.00, y: 0.00)\n"
+                                            "    └── 'Michel' (rgb(10%, 22%, 13%)@2, x: 0.00, y: 0.00)")
+
+        with self.assertRaises(TypeError): NodeSVG.get_random_tree(n_children=4)
+
 
 # shell command to run the tests:
 # $ python -m unittest -v test.test_node_svg

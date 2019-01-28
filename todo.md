@@ -39,7 +39,7 @@
     - [ ] :warning: linear gradient from top to bottom, doesn't look good for horizontal lines
     - [ ] :tada: multiple shapes support
     - [ ] :tada: text inside nodes (and automatic ellipsis)
-    - [ ] :tada: possibility to create random tree
+    - [x] :tada: possibility to create random tree
     - [ ] :tada: multiple layout (aligned left, circle, ...)
     - [ ] :tada: default tree style options (basic, red to blue, ...)
     - [ ] :tada: allow easy tree building by parsing a string representing the tree
