@@ -296,7 +296,12 @@ class NodeSVG:
         ----------
         child: ``NodeSVG``
             Child to add.
-        
+
+        Raises
+        ------
+        TypeError
+            If child is not of type ``NodeSVG``.
+
         Examples
         --------
         .. doctest::
@@ -329,6 +334,9 @@ class NodeSVG:
             root node
             └── new value!
         """
+        if type(child) is not NodeSVG:
+            raise TypeError('child parameter has to be of type NodeSVG')
+
         self.children.append(child)
 
     def is_leaf(self):

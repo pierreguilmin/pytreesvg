@@ -97,6 +97,15 @@ class TestClassNodeSVG(unittest.TestCase):
                                                  '    └── 5\n'
                                                  '    └── 4')
 
+    def test_add_child(self):
+        tree = NodeSVG('root node')
+        with self.assertRaises(TypeError): tree.add_child(1)
+        with self.assertRaises(TypeError): tree.add_child(None)
+
+        tree.add_child(NodeSVG('child node'))
+        self.assertEqual(str(tree), 'root node\n'
+                                    '└── child node')
+
     def test_is_leaf(self):
         self.assertEqual(self.basic_tree.is_leaf(), False)
         self.assertEqual(self.basic_tree.children[0].is_leaf(), True)
