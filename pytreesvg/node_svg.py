@@ -601,10 +601,3 @@ class NodeSVG:
                 self.svg_gradient += child_gradient
 
         return (self.svg_gradient, created_gradient_list)
-
-
-class TreeSVG:
-    def __init__(self, representation=None):
-        lines = representation.split('\n')
-
-        self.root_node = NodeSVG()
