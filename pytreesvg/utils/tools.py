@@ -2,9 +2,9 @@
 
 
 def map_value(x: float, a: float, b: float, c: float, d: float) -> float:
-    """Map linearly x in [a, b] to [c, d].
+    """Map linearly :math:`x` from math:`[a, b]` to math:`[c, d]`.
 
-    The function used to map :math:`x` linearly is
+    The function used is:
 
     .. math::
         f : [a, b] & \\to     [c, d] \\\\
@@ -12,17 +12,16 @@ def map_value(x: float, a: float, b: float, c: float, d: float) -> float:
     
     Args:
         x: Value to map.
-        a: Lower boundary of [a, b] to which x belongs.
-        b: Higher boundary of [a, b] to which x belongs.
-        c: Lower boundary of [c, d] where we want to map x.
-        d: Higher boundary of [c, d] where we want to map x.
+        a: Origin interval lower boundary.
+        b: Origin interval higher boundary.
+        c: Destination interval lower boundary
+        d: Destination interval higher boundary.
 
     Returns:
-        The value of `x` linearly mapped.
+        The linearly mapped new value.
 
     Raises:
-        ValueError: If ``a = b`` or ``c = d`` (i.e. if one of the interval is
-        empty).
+        ValueError: If ``a = b`` (i.e. the origin interval is empty).
 
     Examples:
         >>> map(1, 0, 5, 0, 10)
@@ -30,10 +29,10 @@ def map_value(x: float, a: float, b: float, c: float, d: float) -> float:
 
         >>> # convert 30 degrees in radian
         >>> import math
-        >>> map(30, 0, 180, 0, math.pi)
+        >>> map(30, 0, 360, 0, 2 * math.pi)
         0.5235987755982988
     """
-    if a == b or c == d:
-        raise ValueError("a = b or c = d, intervals shouldn't be empty")
+    if a == b:
+        raise ValueError('the origin interval is empty')
 
     return (x - a) / (b - a) * (d - c) + c
