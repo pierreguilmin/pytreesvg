@@ -1,9 +1,12 @@
-# Python's bytecode compiled files
+# python's bytecode compiled files
 __pycache__/
 
-# Sphinx build files in doc/build/ folder
+# sphinx build files
 doc/build/**
 !doc/build/.gitkeep
+
+# pycharm settings
+.idea/
 
 # temp/ folder
 temp/**
