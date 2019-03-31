@@ -2,7 +2,7 @@ import unittest
 import sys, os
 sys.path.insert(0, os.path.abspath('pytreesvg'))
 
-from pytreesvg.tools import map
+from pytreesvg.utils.tools import map
 
 import math
 
