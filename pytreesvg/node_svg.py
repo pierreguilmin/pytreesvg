@@ -1,9 +1,4 @@
-"""This module implements a set of classes to draw a SVG tree.
-
-.. testsetup::
-
-    from pytreesvg.node_svg import NodeStyle, NodeSVG
-"""
+"""This module implements a set of classes to draw a SVG tree."""
 
 from __future__ import annotations
 import random
@@ -20,25 +15,19 @@ class NodeSVG:
     A node is defined by a value and some children nodes (other ``NodeSVG``
     objects). A node value can be of any type.
 
-    Attributes
-    ----------
-    value: any
-        Node value.
-    children: list of ``NodeSVG``
-        Node children, can be empty.
-    style: ``NodeStyle``
-        SVG style of the node.
-    x: int
-        Circle `x` position in the SVG image in pixel.
-    y: int
-        Circle `y` position in the SVG image in pixel.
+    Attributes:
+        value: Node value.
+        children: Node children, can be empty.
+        style: SVG style of the node.
+        x: Circle `x` position in the SVG image in pixel.
+        y: Circle `y` position in the SVG image in pixel.
 
-    Notes
-    -----
-    The tree defined by the root node (the only node with no parent) is the
-    equivalent of a mathematically defined
-    unordered tree (or algebraic tree). See
-    `Wikipedia 'Tree (data structure)' article <https://en.wikipedia.org/wiki/Tree_(data_structure)>`_.
+    Notes:
+        The tree defined by the root node (the only node with no parent) is the
+        equivalent of a mathematically defined
+        unordered tree (or algebraic tree). See
+        `Wikipedia 'Tree (data structure)' article <https://en.wikipedia.org/wiki/Tree_(data_structure)>`_
+        .
     """
 
     def __init__(self,
@@ -47,20 +36,13 @@ class NodeSVG:
                  style: str = 'blue@12'):
         """Create a ``NodeSVG`` object.
 
-        Parameters
-        ----------
-        value: any, optional
-            Node value (`default=None`).
-        children: list of ``NodeSVG``, optional
-            Node children (`default=None`).
-        style: ``NodeStyle`` string short representation, optional
-            ``NodeStyle`` string short representation defining the SVG style
-            of the node (`default='blue@12'`).
+        Args:
+            value: Node value.
+            children: Node children.
+            style: ``NodeStyle`` string short representation defining the SVG
+                style of the node.
 
-        Examples
-        --------
-        .. doctest::
-
+        Examples:
             >>> NodeSVG('+', children=[NodeSVG(1, style='aqua@16'), NodeSVG(2), NodeSVG(3)])
             '+' (blue@12, x: 0.00, y: 0.00)
             └── 1 (aqua@16, x: 0.00, y: 0.00)
@@ -115,20 +97,14 @@ class NodeSVG:
     def add_child(self, child: NodeSVG):
         """Add a child to the node.
 
-        Parameters
-        ----------
-        child: ``NodeSVG``
-            Child to add.
+        Args:
+            child: Child to add.
 
-        Raises
-        ------
-        TypeError
-            If child is not of type ``NodeSVG``.
+        Raises:
+            TypeError: If child is not of type ``NodeSVG``.
 
         Examples
         --------
-        .. doctest::
-
             >>> tree = NodeSVG('+')
             >>> print(tree)
             +
@@ -139,14 +115,12 @@ class NodeSVG:
             └── 1
             └── 2
 
-        Warnings
-        --------
-        This method is not doing a deep copy of the given ``NodeSVG`` object,
-        any subsequent modification of the given node will modify the current
-        node.
+        Warnings:
+            This method is not doing a deep copy of the given ``NodeSVG``
+            object, any subsequent modification of the given node will modify
+            the current node.
         
-        .. doctest::
-
+        Examples:
             >>> tree = NodeSVG('root node')
             >>> child = NodeSVG('some value')
             >>> tree.add_child(child)
@@ -167,15 +141,10 @@ class NodeSVG:
         """Return a boolean indicating if the node is a leaf or not (a node
         is a leaf if it has no children).
 
-        Returns
-        -------
-        bool
+        Returns:
             ``True`` if the node has no children, ``False`` otherwise.
 
-        Examples
-        --------
-        .. doctest::
-
+        Examples:
             >>> basic_tree = NodeSVG('+', children=[NodeSVG(1), NodeSVG(2), NodeSVG(3)])
             >>> basic_tree.is_leaf()
             False
@@ -188,15 +157,12 @@ class NodeSVG:
         """Find the depth of the tree from this node (the mathematically
         defined depth).
     
-        Parameters
-        ----------
-        current_node_depth: int, optional
-            Depth of the current node in the considered tree (`default=0`).
+        Args:
+            current_node_depth: Depth of the current node in the considered tree
+                .
 
         Examples
         --------
-        .. doctest::
-
             >>> basic_tree = NodeSVG('+', children=[NodeSVG('-', children=[NodeSVG(5)]), NodeSVG(2)])
             >>> print(basic_tree)
             +
@@ -219,30 +185,23 @@ class NodeSVG:
                         colors: Optional[List[str]] = None) -> NodeSVG:
         """Return a random ``NodeSVG`` object.
 
-        Parameters
-        ----------
-        values: list, optional
-            List of possible values for the random node (`default=range(0, 10)`).
-        sizes: list of int, optional
-            List of possible sizes for the random node (`default=range(5, 21)`).
-        colors: list of string, optional
-            List of possible colors for the random node, if not specified the
-            color will be selected randomly over the whole color spectrum (`default=None`).
+        Args:
+            values: List of possible values for the random node.
+            sizes: List of possible sizes for the random node.
+            colors: List of possible colors for the random node, if not
+                specified the color will be selected randomly over the whole
+                color spectrum.
 
-        Notes
-        -----
-        This functions uses the ``random`` module. If you need reproducible
-        results please set the random number generator seed before calling
-        this function::
+        Notes:
+            This functions uses the ``random`` module. If you need reproducible
+            results please set the random number generator seed before calling
+            this function::
 
-            import random
+                import random
 
-            random.seed(42) # set random number generator seed to 42
+                random.seed(42) # set random number generator seed to 42
 
-        Examples
-        --------
-        .. doctest::
-
+        Examples:
             >>> import random
             >>> random.seed(42)
             >>> NodeSVG.get_random_node()
@@ -252,16 +211,15 @@ class NodeSVG:
             ...                         colors=['aqua', 'salmon', '#ff8', 'rgb(10%, 22%, 13%)'])
             'Robert' (salmon@18, x: 0.00, y: 0.00)
 
-        Warnings
-        --------
-        If you want to specify a unique value for one of the parameters,
-        please still use a list format::
+        Warnings:
+            If you want to specify a unique value for one of the parameters,
+            please still use a list format::
 
-            # bad syntax
-            NodeSVG.get_random_node(values=1)
+                # bad syntax
+                NodeSVG.get_random_node(values=1)
 
-            # good syntax
-            NodeSVG.get_random_node(values=[1])
+                # good syntax
+                NodeSVG.get_random_node(values=[1])
         """
         if colors:
             color = random.choice(colors)
@@ -283,39 +241,26 @@ class NodeSVG:
                         colors: List[str] = None) -> Optional[NodeSVG]:
         """Return a ``NodeSVG`` object being the root node of a random tree.
 
-        Parameters
-        ----------
-        max_depth: int, optional
-            Random tree max depth (the mathematically defined depth) (
-            `default=5`).
-        n_children: list of int, optional
-            List of possible values for the number of children per node (
-            `default=range(0, 5)`).
-        values: list, optional
-            List of possible values for the random nodes (`default=range(0,
-            10)`).
-        sizes: list of int, optional
-            List of possible sizes for the random nodes (`default=range(5,
-            21)`).
-        colors: list of string, optional
-            List of possible colors for the random nodes, if not specified
-            the color will be selected randomly over the whole color spectrum
-            (`default=None`).
+        Args:
+            max_depth: Random tree max depth (the mathematically defined depth).
+            n_children: List of possible values for the number of children
+                per node.
+            values: List of possible values for the random nodes.
+            sizes: List of possible sizes for the random nodes.
+            colors: List of possible colors for the random nodes,
+                if not specified the color will be selected randomly over the
+                whole color spectrum.
 
-        Notes
-        -----
-        This functions uses the ``random`` module. If you need reproducible
-        results please set the random number
-        generator seed before calling this function::
+        Notes:
+            This functions uses the ``random`` module. If you need reproducible
+            results please set the random number
+            generator seed before calling this function::
 
-            import random
+                import random
 
-            random.seed(42) # set random number generator seed to 42
+                random.seed(42) # set random number generator seed to 42
 
-        Examples
-        --------
-        .. doctest::
-
+        Examples:
             >>> import random
             >>> random.seed(16)
             >>> print(NodeSVG.get_random_tree())
@@ -352,16 +297,15 @@ class NodeSVG:
                 └── 'Julia' (salmon@18, x: 0.00, y: 0.00)
                 └── 'Julia' (aqua@1, x: 0.00, y: 0.00)
 
-        Warnings
-        --------
-        If you want to specify a unique value for one of the parameters,
-        please still use a list format::
+        Warnings:
+            If you want to specify a unique value for one of the parameters,
+            please still use a list format::
 
-            # bad syntax
-            NodeSVG.get_random_tree(n_children=4)
+                # bad syntax
+                NodeSVG.get_random_tree(n_children=4)
 
-            # good syntax
-            NodeSVG.get_random_node(n_children=[4])
+                # good syntax
+                NodeSVG.get_random_node(n_children=[4])
         """
         if max_depth < 0:
             return None
@@ -394,45 +338,36 @@ class NodeSVG:
                image_border: bool = True):
         """Create a SVG image and draw the tree.
 
-        Danger
-        ------
-        The file at the given path will be overwritten if it exists.
+        Danger:
+            The file at the given path will be overwritten if it exists.
 
-        Parameters
-        ----------
-        path: str, optional
-            Path to the ``.svg`` file to save (`default='node.svg'`).
-        width: int, optional
-            Width of the SVG image to produce, it has to be an integer in [
-            10, 10000] (`default=400`).
-        height: int, optional
-            Height of the SVG image to produce, it has to be an integer in [
-            10, 10000] (`default=400`).
-        gradient_color: bool, optional
-            Set to ``True`` to apply linear gradient colors to edges between
-            differently colored nodes (`default=True`).
-        image_border: bool, optional
-            Set to ``True`` to draw the image border (`default=True`).
+        Args:
+            path: Path to the ``.svg`` file to save.
+            width: Width of the SVG image to produce, it has to be an integer
+                in [10, 10000].
+            height: Height of the SVG image to produce, it has to be an
+                integer in [10, 10000].
+            gradient_color: Set to ``True`` to apply linear gradient colors
+                to edges between differently colored nodes.
+            image_border: Set to ``True`` to draw the image border.
         
-        Raises
-        ------
-        ValueError
-            If the given width or height are not integers in [10, 10000].
+        Raises:
+            ValueError: If the given width or height are not integers in [10,
+                10000].
 
-        Notes
-        -----
-        The `DOCTYPE` for SVG 1.1 is
+        Notes:
+            The `DOCTYPE` for SVG 1.1 is
 
-        ``<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN``
-        ``"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"``
+            ``<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN``
+            ``"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"``
         
-        However, the official
-        `W3C SVG 1.1 (Second Edition) Recommendation - Section 1.3 <https://www.w3.org/TR/2011/REC-SVG11-20110816/intro.html#NamespaceAndDTDIdentifiers>`_
-        states that "It is not recommended that a DOCTYPE declaration be
-        included in SVG documents.".
+            However, the official
+            `W3C SVG 1.1 (Second Edition) Recommendation - Section 1.3 <https://www.w3.org/TR/2011/REC-SVG11-20110816/intro.html#NamespaceAndDTDIdentifiers>`_
+            states that "It is not recommended that a DOCTYPE declaration be
+            included in SVG documents.".
 
-        We respect the W3C recommendation and don't include the `DOCTYPE` in
-        the output SVG file.
+            We respect the W3C recommendation and don't include the `DOCTYPE` in
+            the output SVG file.
         """
         width = int(width)
         height = int(height)
@@ -499,14 +434,10 @@ class NodeSVG:
 
         (see :func:`pytreesvg.tools.map`).
 
-        Parameters
-        ----------
-        svg_height: int
-            Total height of the SVG image.
-        current_node_depth: int, optional
-            Depth of the current node in the tree (`default=0`).
-        tree_depth: int, optional
-            Total depth of the tree (`default=None`).
+        Args:
+            svg_height: Total height of the SVG image.
+            current_node_depth: Depth of the current node in the tree.
+            tree_depth: Total depth of the tree.
         """
         if not tree_depth:
             tree_depth = self.get_depth()
@@ -543,16 +474,11 @@ class NodeSVG:
 
         (see :func:`pytreesvg.tools.map`).
 
-        Parameters
-        ----------
-        parent_svg_width: float
-            SVG width of the parent node.
-        level_svg_offset: float, optional
-            SVG x offset of the current level (`default=0`).
-        current_node_index: int, optional
-            Current node index in the current level (`default=0`).
-        nb_node_current_level: int, optional
-            Number of node in the current level (`default=1`).
+        Args:
+            parent_svg_width: SVG width of the parent node.
+            level_svg_offset: SVG x offset of the current level.
+            current_node_index: Current node index in the current level.
+            nb_node_current_level: Number of node in the current level.
         """
         self.x = level_svg_offset + map_value(
             current_node_index,
@@ -580,20 +506,16 @@ class NodeSVG:
                                             indentation: str = '    ') -> str:
         """Recursively get the SVG representation of the node and its children.
 
-        Parameters
-        ----------
-        gradient_color: bool
-            If some gradient colors have been defined in the SVG `defs`
-            section (by using :meth:`_recursively_get_svg_gradient_color_defs
-            ` when creating the SVG image), set to ``True`` to use these
-            colors for the edges.
-        indentation: str, optional
-            Spaces before the current node SVG string to distinguish children
-            from parents (`default='    '`).
+        Args:
+            gradient_color: If some gradient colors have been defined in the
+                SVG `defs` section (by using
+                :meth:`_recursively_get_svg_gradient_color_defs` when
+                creating the SVG image), set to ``True`` to use these colors
+                for the edges.
+            indentation: Spaces before the current node SVG string to
+                distinguish children from parents.
 
-        Returns
-        -------
-        str
+        Returns:
             SVG representation of the node and its children.
         """
         current_node_svg_representation = (f'{indentation}<!-- Node '
@@ -643,14 +565,10 @@ class NodeSVG:
         """Recursively create all the necessary linear gradient color
         definitions.
 
-        Parameters
-        ----------
-        created_gradient_list: list of str, optional
-            List of gradient colors id already created (`default=None`)
+        Args:
+            created_gradient_list: List of gradient colors id already created.
 
-        Returns
-        -------
-        (str, list of str)
+        Returns:
             (gradient color definitions of the node and its children, already
             created gradient colors)
         """

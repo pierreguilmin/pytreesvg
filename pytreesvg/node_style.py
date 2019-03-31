@@ -9,46 +9,37 @@ class NodeStyle:
     ``'#aa8ef7@3'``, ``'#f00@38'``, ``'rgb(122,17,234)@7'``, ``'rgb(23%,5%,
     100%)@10'``, ...
 
-    Attributes
-    ----------
-    color: str
-        Background color of the node circle, see **Notes** under.
-    size: int
-        Radius of the node circle in pixel, has to be an integer in [0, 100].
+    Attributes:
+        color: Background color of the node circle, see **Notes** under.
+        size: Radius of the node circle in pixel, has to be an integer in
+            [0, 100].
 
-    Notes
-    -----
-    To respect the `W3C SVG 1.1 (Second Edition) Recommendation - Section 4.2
-    <https://www.w3.org/TR/2011/REC-SVG11-20110816/types.html#BasicDataTypes>`_
-    , the following color notations are allowed:
+    Notes:
+        To respect the
+        `W3C SVG 1.1 (Second Edition) Recommendation - Section 4.2 <https://www.w3.org/TR/2011/REC-SVG11-20110816/types.html#BasicDataTypes>`_
+        , the following color notations are allowed:
 
-    - base color: ``aliceblue``, ``darkturquoise``, ``lightcoral``, ... (see
-    `W3C SVG 1.1 (Second Edition) Recommendation - Section 4.4 <https://www.w3.org/TR/2011/REC-SVG11-20110816/types.html#ColorKeywords>`_)
-    - hexadecimal notation (short or long): ``#aa8ef7``, ``#F7AA9E``,
-    ``#f00``, ``#FFF``, ...
-    - rgb notation (value or percentage): ``rgb(122,17,234)``, ``rGb(13, 0,
-    137)``, ``rgb(23%,5%,100%)``, ``RGB(23 %, 5 %, 100 %)``, ...
+        - base color: ``aliceblue``, ``darkturquoise``, ``lightcoral``, ... (see
+          `W3C SVG 1.1 (Second Edition) Recommendation - Section 4.4 <https://www.w3.org/TR/2011/REC-SVG11-20110816/types.html#ColorKeywords>`_
+          )
+        - hexadecimal notation (short or long): ``#aa8ef7``, ``#F7AA9E``,
+          ``#f00``, ``#FFF``, ...
+        - rgb notation (value or percentage): ``rgb(122,17,234)``, ``rGb(13, 0,
+          137)``, ``rgb(23%,5%,100%)``, ``RGB(23 %, 5 %, 100 %)``, ...
     """
 
     def __init__(self, representation: str = 'blue@12'):
         """Create a ``NodeStyle`` object.
 
-        Parameters
-        ----------
-        representation: str, optional
-            Short representation of the node style (`default='blue@12'`).
+        Args:
+            representation: Short representation of the node style.
 
-        Raises
-        ------
-        ValueError
-            If the given representation is incorrect (i.e. the representation
-            syntax is invalid or the color or the size don't respect the
-            requirements described above).
+        Raises:
+            ValueError: If the given representation is incorrect (i.e. the
+            representation syntax is invalid or the color or the size don't
+            respect the requirements described above).
 
-        Examples
-        --------
-        .. doctest::
-
+        Examples:
             >>> NodeStyle('green@12')
             <NodeStyle: color='green', size=12>
             >>> NodeStyle('#aa8ef7@3')
@@ -79,16 +70,12 @@ class NodeStyle:
     def _get_valid_color(color: str) -> str:
         """Return a valid SVG color or raise an error.
 
-        Parameters
-        ----------
-        color: str
-            Color string.
+        Args:
+            color: Color string.
 
-        Raises
-        ------
-        ValueError
-            If the given color doesn't match the SVG colors requirements
-            described above.
+        Raises:
+            ValueError: If the given color doesn't match the SVG colors
+            requirements described above.
         """
         # see https://www.w3.org/TR/2011/REC-SVG11-20110816/types.html#ColorKeywords
         base_color_list = [
@@ -167,15 +154,11 @@ class NodeStyle:
     def _get_valid_size(size: str) -> int:
         """Return a valid size in [0, 100] or raise an error.
 
-        Parameters
-        ----------
-        size: str
-            Size string.
+        Args:
+            size: Size string.
 
-        Raises
-        ------
-        ValueError
-            If the given size is not in [0, 100].
+        Raises:
+            ValueError: If the given size is not in [0, 100].
         """
         size = int(size)
 
@@ -196,29 +179,20 @@ class NodeStyle:
         """Return a string representing the color with a unique id that
         respects the SVG recommendation.
 
-        Returns
-        -------
-        string
-            Color id (unique and SVG-valid).
+        Notes:
+            The
+            `W3C SVG 1.1 (Second Edition) Recommendation - Section 5.10.1 <https://www.w3.org/TR/2011/REC-SVG11-20110816/struct.html#Core.attrib>`_
+            states that one should refer to the
+            `W3C XML 1.0 (Fifth Edition) Recommendation - Section 3.3.1 <https://www.w3.org/TR/2008/REC-xml-20081126/#sec-attribute-types>`_
+            when specifying the ``id`` attribute of an object. This last document
+            specifies that the possible names are defined in the
+            `W3C XML 1.0 (Fifth Edition) Recommendation - Section 2.3 <https://www.w3.org/TR/2008/REC-xml-20081126/#NT-Name>`_
+            .
 
-        Notes
-        -----
-        The
-        `W3C SVG 1.1 (Second Edition) Recommendation - Section 5.10.1 <https://www.w3.org/TR/2011/REC-SVG11-20110816/struct.html#Core.attrib>`_
-        states that one should refer to the
-        `W3C XML 1.0 (Fifth Edition) Recommendation - Section 3.3.1 <https://www.w3.org/TR/2008/REC-xml-20081126/#sec-attribute-types>`_
-        when specifying the ``id`` attribute of an object. This last document
-        specifies that the possible names are defined in the
-        `W3C XML 1.0 (Fifth Edition) Recommendation - Section 2.3 <https://www.w3.org/TR/2008/REC-xml-20081126/#NT-Name>`_
-        .
+            This function returns an arbitrarily modified color name specifically
+            built to respect this convention.
 
-        This function returns an arbitrarily modified color name specifically
-        built to respect this convention.
-
-        Examples
-        --------
-        .. doctest::
-
+        Examples:
             >>> NodeStyle('green@12').get_color_id()
             'green'
             >>> NodeStyle('#aa8ef7@3').get_color_id()
