@@ -9,7 +9,9 @@ from __future__ import annotations
 import re
 import random
 from typing import Any, List, Optional, Tuple
+
 from pytreesvg.tools import map
+
 
 class NodeStyle:
     """This class defines a node style by detailing its SVG characteristics.

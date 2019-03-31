@@ -5,6 +5,7 @@
     from pytreesvg.tools import map
 """
 
+
 def map(x: float, a: float, b: float, c: float, d: float) -> float:
     """Map linearly x in [a, b] to [c, d].
 
