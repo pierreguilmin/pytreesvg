@@ -6,7 +6,7 @@
 """
 
 
-def map(x: float, a: float, b: float, c: float, d: float) -> float:
+def map_value(x: float, a: float, b: float, c: float, d: float) -> float:
     """Map linearly x in [a, b] to [c, d].
 
     The function used to map :math:`x` linearly is
@@ -50,7 +50,6 @@ def map(x: float, a: float, b: float, c: float, d: float) -> float:
         >>> map(30, 0, 180, 0, math.pi)
         0.5235987755982988
     """
-
     if a == b or c == d:
         raise ValueError("a = b or c = d, intervals shouldn't be empty")
 
