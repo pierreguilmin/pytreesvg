@@ -5,8 +5,10 @@
     from pytreesvg.node_svg import NodeStyle, NodeSVG
 """
 
+from __future__ import annotations
 import re
 import random
+from typing import Any, List, Optional, Tuple
 from pytreesvg.tools import map
 
 class NodeStyle:
@@ -35,7 +37,7 @@ class NodeStyle:
       ``RGB(23 %, 5 %, 100 %)``, ...
     """
 
-    def __init__(self, representation='blue@12'):
+    def __init__(self, representation: str = 'blue@12'):
         """Create a ``NodeStyle`` object.
 
         Parameters
@@ -75,7 +77,7 @@ class NodeStyle:
         self.size  = NodeStyle._get_valid_size(chuncks[1])
 
     @staticmethod
-    def _get_valid_color(color):
+    def _get_valid_color(color: str) -> str:
         """Return a valid SVG color or raise an error.
 
         Parameters
@@ -130,7 +132,7 @@ class NodeStyle:
         return color
 
     @staticmethod
-    def _get_valid_size(size):
+    def _get_valid_size(size: str) -> int:
         """Return a valid size in [0, 100] or raise an error.
 
         Parameters
@@ -150,15 +152,15 @@ class NodeStyle:
 
         return size
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         """Return a string detailing the node style SVG characteristics."""
         return f'<NodeStyle: color={self.color!r}, size={self.size}>'
 
-    def __str__(self):
+    def __str__(self) -> str:
         """Return a string representing the style."""
         return f'{self.color}@{self.size}'
 
-    def get_color_id(self):
+    def get_color_id(self) -> str:
         """Return a string representing the color with a unique id that respects the SVG recommendation.
 
         Returns
@@ -224,7 +226,8 @@ class NodeSVG:
     <https://en.wikipedia.org/wiki/Tree_(data_structure)>`_.
     """
 
-    def __init__(self, value=None, children=None, style='blue@12'):
+    def __init__(self, value: Optional[Any] = None, children: Optional[List[Any]] = None,
+                 style: str = 'blue@12'):
         """Create a ``NodeSVG`` object.
 
         Parameters
@@ -267,7 +270,7 @@ class NodeSVG:
         self.x = 0.0
         self.y = 0.0
 
-    def __repr__(self, depth=0):
+    def __repr__(self, depth: int = 0) -> str:
         """Return a string representing the node and its children as a tree (with their SVG style and position)."""
         string_tree = f'{self.value!r} ({self.style}, x: {self.x:.2f}, y: {self.y:.2f})'
 
@@ -278,7 +281,7 @@ class NodeSVG:
 
         return string_tree
 
-    def __str__(self, depth=0):
+    def __str__(self, depth: int = 0) -> str:
         """Return a string representing the node and its children as a tree."""
         string_tree = str(self.value)
 
@@ -289,7 +292,7 @@ class NodeSVG:
 
         return string_tree
 
-    def add_child(self, child):
+    def add_child(self, child: NodeSVG):
         """Add a child to the node.
 
         Parameters
@@ -339,7 +342,7 @@ class NodeSVG:
 
         self.children.append(child)
 
-    def is_leaf(self):
+    def is_leaf(self) -> bool:
         """Return a boolean indicating if the node is a leaf or not (a node is a leaf if it has no children).
 
         Returns
@@ -359,7 +362,7 @@ class NodeSVG:
         """
         return not self.children
 
-    def get_depth(self, current_node_depth=0):
+    def get_depth(self, current_node_depth: int = 0) -> int:
         """Find the depth of the tree from this node (the mathematically defined depth).
     
         Parameters
@@ -386,7 +389,8 @@ class NodeSVG:
             return max([child.get_depth(current_node_depth + 1) for child in self.children])
 
     @staticmethod
-    def get_random_node(values=range(0, 10), sizes=range(5, 21), colors=None):
+    def get_random_node(values: List[int] = range(0, 10), sizes: List[int] = range(5, 21),
+                        colors: Optional[List[str]] = None) -> NodeSVG:
         """Return a random ``NodeSVG`` object.
 
         Parameters
@@ -440,11 +444,11 @@ class NodeSVG:
         return NodeSVG(value=random.choice(values), style=f'{color}@{random.choice(sizes)}')
 
     @staticmethod
-    def get_random_tree(max_depth=5,
-                        n_children=range(0, 5),
-                        values=range(0, 10),
-                        sizes=range(5, 21),
-                        colors=None):
+    def get_random_tree(max_depth: int = 5,
+                        n_children: List[int] = range(0, 5),
+                        values: List[int] = range(0, 10),
+                        sizes: List[int] = range(5, 21),
+                        colors: List[str] = None) -> Optional[NodeSVG]:
         """Return a ``NodeSVG`` object being the root node of a random tree.
 
         Parameters
@@ -537,7 +541,8 @@ class NodeSVG:
 
         return root_node
 
-    def to_svg(self, path='node.svg', width=400, height=400, gradient_color=True, image_border=True):
+    def to_svg(self, path: str = 'node.svg', width: int = 400, height: int = 400,
+               gradient_color: bool = True, image_border: bool = True):
         """Create a SVG image and draw the tree.
 
         Danger
@@ -615,7 +620,8 @@ class NodeSVG:
 
             SVG_file.write(header + title + defs + border + corpse + backer)
 
-    def _recursively_compute_y_position(self, SVG_height, current_node_depth=0, tree_depth=None):
+    def _recursively_compute_y_position(self, SVG_height: int, current_node_depth: int = 0,
+                                        tree_depth: int = None):
         """Recursively compute the `y` position of the node and its children in the SVG image.
 
         The function used to compute the :math:`y` position of a node at depth :math:`t` belonging to a tree of total 
@@ -645,10 +651,10 @@ class NodeSVG:
             child._recursively_compute_y_position(SVG_height, current_node_depth + 1, tree_depth)
 
     def _recursively_compute_x_position(self,
-                                        parent_SVG_width,
-                                        level_SVG_offset=0.0,
-                                        current_node_index=0,
-                                        nb_node_current_level=1):
+                                        parent_SVG_width: float,
+                                        level_SVG_offset: float = 0.0,
+                                        current_node_index: int = 0,
+                                        nb_node_current_level: int = 1):
         """Recursively compute the `x` position of the node and its children in the SVG image.
 
         The function used to compute the :math:`x` position of a node at index :math:`i` belonging to a siblings group (
@@ -685,7 +691,9 @@ class NodeSVG:
                                                   current_node_index=i,
                                                   nb_node_current_level=len(self.children))
 
-    def _recursively_get_svg_representation(self, gradient_color, indentation='    '):
+    def _recursively_get_svg_representation(self,
+                                            gradient_color: bool,
+                                            indentation: str = '    ') -> str:
         """Recursively get the SVG representation of the node and its children.
 
         Parameters
@@ -733,7 +741,9 @@ class NodeSVG:
 
         return current_node_SVG_representation + children_SVG_representation
 
-    def _recursively_get_svg_gradient_color_defs(self, created_gradient_list=None):
+    def _recursively_get_svg_gradient_color_defs(self,
+                                                 created_gradient_list: Optional[List[str]] = None)\
+            -> Tuple[str, List[str]]:
         """Recursively create all the necessary linear gradient color definitions.
 
         Parameters
