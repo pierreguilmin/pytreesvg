@@ -8,6 +8,9 @@ doc/build/**
 # pycharm settings
 .idea/
 
+# pipenv
+Pipfile.lock
+
 # temp/ folder
 temp/**
 !temp/.gitkeep

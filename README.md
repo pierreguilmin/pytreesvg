@@ -2,7 +2,7 @@
 [![documentation status](https://readthedocs.org/projects/pytreesvg/badge/?version=latest)](https://pytreesvg.readthedocs.io/en/latest/?badge=latest)
 [![MIT license](https://img.shields.io/github/license/PierreGuilmin/pytreesvg.svg)](https://github.com/PierreGuilmin/pytreesvg/blob/master/LICENSE)
 
-:construction: work in progress... :construction:
+:warning: Work in progress, this package is not stable yet.
 
 # :herb: pytreesvg
 
@@ -34,27 +34,9 @@ $ git clone https://github.com/PierreGuilmin/pytreesvg.git
 
 :warning: This project is still under development and not stable yet.
 
-### Setup a Python conda environment on your local computer
+### Dev dependencies
 
-> :point_up: We assume you have `conda` installed on your computer, otherwise please take a look at [conda documentation](https://docs.conda.io/en/latest/) and [conda cheat sheet](https://docs.conda.io/projects/conda/en/latest/user-guide/cheatsheet.html).
-
-The repository was written and tested under `Python 3.6`. You can see the requirements under [`environment.yml`](environment.yml). To create the conda environment named `pytreesvg_env` (the environment used by the project), please run the following command:
-```bash
-# create the conda environment
-$ conda env create --file environment.yml
-```
-
-Some useful command lines to work with this conda environment:
-```bash
-# activate the conda environment
-$ source activate pytreesvg_env
-
-# deactivate the conda environment
-$ source deactivate
-
-# remove the conda environment
-$ conda env remove --name pytreesvg_env
-```
+- pipenv
 
 ### Documentation
 
@@ -75,8 +57,6 @@ It is built with Sphinx and updated every time a commit is pushed on the GitHub 
   > :warning: This directory should not be versionned.
 
 - **`test/`**: Python `unittest` directory for the `pytreesvg` module.
-
-- **`travis/`**: Travis CI related directory.
 
 ### Emoji commit code table
 
@@ -99,21 +79,4 @@ For example if you want to commit a new rocket feature — `🎉 new feature, fl
 
 # good syntax
 + $ git commit -m ':tada: new feature, flying rocket!'
-```
-
-### Notes
-The conda environment was created with the following commands:
-```bash
-# create the conda environment
-$ conda create --name pytreesvg_env python=3.6 sphinx sphinx_rtd_theme
-$ source activate pytreesvg_env
-$ pip install sphinxcontrib-napoleon
-```
-
-And the requirements were exported with the following command:
-```bash
-# export the current conda environment requirements as .yml, we remove
-#   - the final "prefix: ..." line
-#   - some macOS specific modules not available on Linux (libcxx and libcxxabi)
-$ conda env export --no-builds --name pytreesvg_env | grep -E -v "^prefix|libcxx|libcxxabi" > environment.yml
 ```
